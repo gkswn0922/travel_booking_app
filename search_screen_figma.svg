@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375" height="812" viewBox="0 0 375 812" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 그라디언트 정의 -->
+    <linearGradient id="koreanAirGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#1E40AF"/>
+    </linearGradient>
+    <linearGradient id="phoenixGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="czechGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C2D12"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 메인 컨테이너 -->
+  <g id="search-screen-container">
+    <!-- 배경 -->
+    <rect id="search-background" width="375" height="812" fill="#FFFFFF"/>
+    
+    <!-- 상단 앱바 -->
+    <g id="search-app-bar">
+      <rect id="app-bar-background" x="0" y="0" width="375" height="56" fill="#FFFFFF"/>
+      <line id="app-bar-border" x1="0" y1="56" x2="375" y2="56" stroke="#E5E7EB" stroke-width="1"/>
+      
+      <!-- 뒤로가기 버튼 -->
+      <g id="back-button">
+        <circle id="back-button-bg" cx="28" cy="28" r="20" fill="none"/>
+        <path id="back-arrow" d="M20 28L24 24L24 26L28 26L28 30L24 30L24 32L20 28Z" fill="#000000"/>
+      </g>
+      
+      <!-- 검색 입력창 -->
+      <g id="search-input-container">
+        <rect id="search-input-bg" x="60" y="16" width="255" height="40" rx="20" fill="#F3F4F6"/>
+        <g id="search-input-content">
+          <circle id="search-icon" cx="80" cy="36" r="8" fill="#9CA3AF"/>
+          <text id="search-placeholder" x="100" y="42" font-family="Inter, sans-serif" font-size="16" fill="#9CA3AF">검색어를 입력하세요</text>
+        </g>
+      </g>
+      
+      <!-- 음성 검색 버튼 -->
+      <g id="voice-search-button">
+        <circle id="voice-button-bg" cx="347" cy="28" r="20" fill="none"/>
+        <path id="voice-icon" d="M12 2C10.9 2 10 2.9 10 4V8C10 9.1 10.9 10 12 10C13.1 10 14 9.1 14 8V4C14 2.9 13.1 2 12 2ZM19 4V8C19 11.3 16.3 14 13 14C9.7 14 7 11.3 7 8V4H5V8C5 12.4 8.6 16 13 16C17.4 16 21 12.4 21 8V4H19ZM13 18C13 19.1 12.1 20 11 20H15C13.9 20 13 19.1 13 18Z" transform="translate(335, 18)" fill="#000000"/>
+      </g>
+    </g>
+    
+    <!-- 메인 콘텐츠 -->
+    <g id="search-content" transform="translate(0, 56)">
+      <!-- 추천 검색어 섹션 -->
+      <g id="search-suggestions-section">
+        <g id="suggestions-header">
+          <text id="suggestions-title" x="16" y="32" font-family="Inter, sans-serif" font-size="18" fill="#000000" font-weight="700">추천 검색어</text>
+        </g>
+        
+        <g id="suggestions-tags" transform="translate(16, 48)">
+          <!-- 일본 숙소 특가 -->
+          <g id="tag-japan">
+            <rect id="japan-tag-bg" x="0" y="0" width="120" height="32" rx="16" fill="#F3F4F6"/>
+            <text id="japan-tag-text" x="60" y="20" font-family="Inter, sans-serif" font-size="14" fill="#374151" text-anchor="middle">일본 숙소 특가</text>
+          </g>
+          
+          <!-- 인기 지역 숙소 특가 -->
+          <g id="tag-popular" transform="translate(128, 0)">
+            <rect id="popular-tag-bg" x="0" y="0" width="180" height="32" rx="16" fill="#F3F4F6"/>
+            <text id="popular-tag-text" x="90" y="20" font-family="Inter, sans-serif" font-size="14" fill="#374151" text-anchor="middle">인기 지역 숙소 특가 진행 중</text>
+          </g>
+          
+          <!-- 도쿄 호텔 할인 -->
+          <g id="tag-tokyo" transform="translate(0, 40)">
+            <rect id="tokyo-tag-bg" x="0" y="0" width="100" height="32" rx="16" fill="#F3F4F6"/>
+            <text id="tokyo-tag-text" x="50" y="20" font-family="Inter, sans-serif" font-size="14" fill="#374151" text-anchor="middle">도쿄 호텔 할인</text>
+          </g>
+          
+          <!-- 오사카 여행 패키지 -->
+          <g id="tag-osaka" transform="translate(108, 40)">
+            <rect id="osaka-tag-bg" x="0" y="0" width="120" height="32" rx="16" fill="#F3F4F6"/>
+            <text id="osaka-tag-text" x="60" y="20" font-family="Inter, sans-serif" font-size="14" fill="#374151" text-anchor="middle">오사카 여행 패키지</text>
+          </g>
+          
+          <!-- 후쿠오카 특가 항공권 -->
+          <g id="tag-fukuoka" transform="translate(236, 40)">
+            <rect id="fukuoka-tag-bg" x="0" y="0" width="120" height="32" rx="16" fill="#F3F4F6"/>
+            <text id="fukuoka-tag-text" x="60" y="20" font-family="Inter, sans-serif" font-size="14" fill="#374151" text-anchor="middle">후쿠오카 특가 항공권</text>
+          </g>
+        </g>
+      </g>
+      
+      <!-- 인기 여행 섹션 -->
+      <g id="popular-travel-section" transform="translate(0, 140)">
+        <g id="travel-header">
+          <text id="travel-title" x="16" y="32" font-family="Inter, sans-serif" font-size="18" fill="#000000" font-weight="700">인기 여행</text>
+        </g>
+        
+        <g id="travel-cards" transform="translate(16, 48)">
+          <!-- 대한항공 라이브 특가 카드 -->
+          <g id="korean-air-card">
+            <rect id="korean-air-bg" x="0" y="0" width="200" height="120" rx="12" fill="url(#koreanAirGradient)"/>
+            <g id="korean-air-content">
+              <text id="korean-air-icon" x="16" y="32" font-family="Inter, sans-serif" font-size="24" fill="#FFFFFF">✈️</text>
+              <text id="korean-air-title" x="16" y="56" font-family="Inter, sans-serif" font-size="16" fill="#FFFFFF" font-weight="700">대한항공 라이브 특가</text>
+              <text id="korean-air-subtitle" x="16" y="76" font-family="Inter, sans-serif" font-size="12" fill="#FFFFFF" opacity="0.8">항공권 최대 50% 할인</text>
+            </g>
+          </g>
+          
+          <!-- 휘닉스파크 빅딜 카드 -->
+          <g id="phoenix-card" transform="translate(212, 0)">
+            <rect id="phoenix-bg" x="0" y="0" width="200" height="120" rx="12" fill="url(#phoenixGradient)"/>
+            <g id="phoenix-content">
+              <text id="phoenix-icon" x="16" y="32" font-family="Inter, sans-serif" font-size="24" fill="#FFFFFF">🏔️</text>
+              <text id="phoenix-title" x="16" y="56" font-family="Inter, sans-serif" font-size="16" fill="#FFFFFF" font-weight="700">휘닉스파크 빅딜</text>
+              <text id="phoenix-subtitle" x="16" y="76" font-family="Inter, sans-serif" font-size="12" fill="#FFFFFF" opacity="0.8">리조트 패키지 특가</text>
+            </g>
+          </g>
+          
+          <!-- 체코 투어티켓 카드 -->
+          <g id="czech-card" transform="translate(424, 0)">
+            <rect id="czech-bg" x="0" y="0" width="200" height="120" rx="12" fill="url(#czechGradient)"/>
+            <g id="czech-content">
+              <text id="czech-icon" x="16" y="32" font-family="Inter, sans-serif" font-size="24" fill="#FFFFFF">🏰</text>
+              <text id="czech-title" x="16" y="56" font-family="Inter, sans-serif" font-size="16" fill="#FFFFFF" font-weight="700">체코 투어티켓</text>
+              <text id="czech-subtitle" x="16" y="76" font-family="Inter, sans-serif" font-size="12" fill="#FFFFFF" opacity="0.8">유럽 여행 특가</text>
+            </g>
+          </g>
+        </g>
+      </g>
+      
+      <!-- 지금, 근처에서 할 수 있는 것 섹션 -->
+      <g id="nearby-activities-section" transform="translate(0, 300)">
+        <g id="nearby-header">
+          <text id="nearby-title" x="16" y="32" font-family="Inter, sans-serif" font-size="18" fill="#000000" font-weight="700">지금, 근처에서 할 수 있는 것</text>
+        </g>
+        
+        <g id="nearby-cards" transform="translate(16, 48)">
+          <!-- 광고 카드 -->
+          <g id="ad-card">
+            <rect id="ad-bg" x="0" y="0" width="150" height="100" rx="12" fill="#E5E7EB"/>
+            <text id="ad-text" x="75" y="50" font-family="Inter, sans-serif" font-size="14" fill="#6B7280" text-anchor="middle">광고</text>
+          </g>
+          
+          <!-- 페이지 카드들 -->
+          <g id="page-card-1" transform="translate(162, 0)">
+            <rect id="page1-bg" x="0" y="0" width="150" height="100" rx="12" fill="#E5E7EB"/>
+            <text id="page1-text" x="75" y="50" font-family="Inter, sans-serif" font-size="14" fill="#6B7280" text-anchor="middle">2/47</text>
+          </g>
+          
+          <g id="page-card-2" transform="translate(324, 0)">
+            <rect id="page2-bg" x="0" y="0" width="150" height="100" rx="12" fill="#E5E7EB"/>
+            <text id="page2-text" x="75" y="50" font-family="Inter, sans-serif" font-size="14" fill="#6B7280" text-anchor="middle">3/47</text>
+          </g>
+          
+          <g id="page-card-3" transform="translate(486, 0)">
+            <rect id="page3-bg" x="0" y="0" width="150" height="100" rx="12" fill="#E5E7EB"/>
+            <text id="page3-text" x="75" y="50" font-family="Inter, sans-serif" font-size="14" fill="#6B7280" text-anchor="middle">4/47</text>
+          </g>
+          
+          <g id="page-card-4" transform="translate(648, 0)">
+            <rect id="page4-bg" x="0" y="0" width="150" height="100" rx="12" fill="#E5E7EB"/>
+            <text id="page4-text" x="75" y="50" font-family="Inter, sans-serif" font-size="14" fill="#6B7280" text-anchor="middle">5/47</text>
+          </g>
+        </g>
+      </g>
+      
+      <!-- 인기 여행지 섹션 -->
+      <g id="popular-destinations-section" transform="translate(0, 480)">
+        <g id="destinations-header">
+          <text id="destinations-title" x="16" y="32" font-family="Inter, sans-serif" font-size="18" fill="#000000" font-weight="700">인기 여행지</text>
+        </g>
+        
+        <g id="destinations-grid" transform="translate(16, 48)">
+          <!-- 첫 번째 행 -->
+          <g id="destinations-row-1">
+            <!-- 파리 -->
+            <g id="destination-paris">
+              <rect id="paris-bg" x="0" y="0" width="80" height="40" rx="8" fill="#F3F4F6"/>
+              <text id="paris-text" x="40" y="26" font-family="Inter, sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="500">파리</text>
+            </g>
+            
+            <!-- 로마 -->
+            <g id="destination-rome" transform="translate(92, 0)">
+              <rect id="rome-bg" x="0" y="0" width="80" height="40" rx="8" fill="#F3F4F6"/>
+              <text id="rome-text" x="40" y="26" font-family="Inter, sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="500">로마</text>
+            </g>
+            
+            <!-- 오사카 -->
+            <g id="destination-osaka" transform="translate(184, 0)">
+              <rect id="osaka-bg" x="0" y="0" width="80" height="40" rx="8" fill="#F3F4F6"/>
+              <text id="osaka-text" x="40" y="26" font-family="Inter, sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="500">오사카</text>
+            </g>
+            
+            <!-- 바르셀로나 -->
+            <g id="destination-barcelona" transform="translate(276, 0)">
+              <rect id="barcelona-bg" x="0" y="0" width="80" height="40" rx="8" fill="#F3F4F6"/>
+              <text id="barcelona-text" x="40" y="26" font-family="Inter, sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="500">바르셀로나</text>
+            </g>
+          </g>
+          
+          <!-- 두 번째 행 -->
+          <g id="destinations-row-2" transform="translate(0, 52)">
+            <!-- 런던 -->
+            <g id="destination-london">
+              <rect id="london-bg" x="0" y="0" width="80" height="40" rx="8" fill="#F3F4F6"/>
+              <text id="london-text" x="40" y="26" font-family="Inter, sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="500">런던</text>
+            </g>
+            
+            <!-- 도쿄 -->
+            <g id="destination-tokyo" transform="translate(92, 0)">
+              <rect id="tokyo-bg" x="0" y="0" width="80" height="40" rx="8" fill="#F3F4F6"/>
+              <text id="tokyo-text" x="40" y="26" font-family="Inter, sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="500">도쿄</text>
+            </g>
+            
+            <!-- 방콕 -->
+            <g id="destination-bangkok" transform="translate(184, 0)">
+              <rect id="bangkok-bg" x="0" y="0" width="80" height="40" rx="8" fill="#F3F4F6"/>
+              <text id="bangkok-text" x="40" y="26" font-family="Inter, sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="500">방콕</text>
+            </g>
+            
+            <!-- 다낭 -->
+            <g id="destination-danang" transform="translate(276, 0)">
+              <rect id="danang-bg" x="0" y="0" width="80" height="40" rx="8" fill="#F3F4F6"/>
+              <text id="danang-text" x="40" y="26" font-family="Inter, sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="500">다낭</text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
