@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375" height="812" viewBox="0 0 375 812" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect width="375" height="812" fill="#FFFFFF"/>
+  
+  <!-- 상단 검색바 섹션 -->
+  <g id="top-search-section">
+    <!-- 검색바 배경 -->
+    <rect x="16" y="8" width="343" height="40" rx="20" fill="#F5F5F5"/>
+    
+    <!-- 뒤로가기 버튼 -->
+    <g id="back-button">
+      <rect x="16" y="8" width="40" height="40" fill="none"/>
+      <path d="M28 20L20 28L28 36" stroke="#000000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    
+    <!-- 검색 입력 필드 -->
+    <rect x="64" y="16" width="279" height="24" rx="12" fill="#F5F5F5"/>
+    <text x="76" y="32" font-family="Arial, sans-serif" font-size="14" fill="#666666">일본 숙소 특가</text>
+  </g>
+  
+  <!-- 추천 검색어 섹션 -->
+  <g id="recommended-search-terms-section">
+    <!-- 제목 -->
+    <text x="16" y="80" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#000000">추천 검색어</text>
+    
+    <!-- 검색어 칩들 -->
+    <g id="search-term-chips">
+      <!-- 첫 번째 줄 -->
+      <g id="first-row-chips">
+        <!-- 일본 숙소 특가 -->
+        <rect x="16" y="100" width="120" height="32" rx="16" fill="#F5F5F5" stroke="#E0E0E0"/>
+        <text x="28" y="120" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#333333">일본 숙소 특가</text>
+        
+        <!-- 인기 지역 숙소 특가 진행 중 -->
+        <rect x="144" y="100" width="200" height="32" rx="16" fill="#F5F5F5" stroke="#E0E0E0"/>
+        <text x="156" y="120" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#333333">인기 지역 숙소 특가 진행 중</text>
+      </g>
+      
+      <!-- 두 번째 줄 -->
+      <g id="second-row-chips">
+        <!-- 도쿄 호텔 할인 -->
+        <rect x="16" y="140" width="100" height="32" rx="16" fill="#F5F5F5" stroke="#E0E0E0"/>
+        <text x="28" y="160" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#333333">도쿄 호텔 할인</text>
+        
+        <!-- 오사카 여행 패키지 -->
+        <rect x="124" y="140" width="120" height="32" rx="16" fill="#F5F5F5" stroke="#E0E0E0"/>
+        <text x="136" y="160" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#333333">오사카 여행 패키지</text>
+        
+        <!-- 후쿠오카 특가 항공권 -->
+        <rect x="252" y="140" width="140" height="32" rx="16" fill="#F5F5F5" stroke="#E0E0E0"/>
+        <text x="264" y="160" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#333333">후쿠오카 특가 항공권</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- 추천 상품 섹션 -->
+  <g id="recommended-products-section">
+    <!-- 제목 -->
+    <text x="16" y="220" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#000000">추천 상품</text>
+    
+    <!-- 상품 카드들 -->
+    <g id="product-cards">
+      <!-- 여행용 샤워필터 카드 -->
+      <g id="shower-filter-card">
+        <rect x="16" y="240" width="140" height="120" rx="12" fill="#1E3A8A"/>
+        <circle cx="40" cy="260" r="12" fill="#FFFFFF"/>
+        <path d="M34 260C34 256 36 254 40 254C44 254 46 256 46 260C46 264 44 266 40 266C36 266 34 264 34 260Z" fill="#1E3A8A"/>
+        <text x="28" y="290" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">여행용 샤워필터</text>
+      </g>
+      
+      <!-- 여행용 캐리어 핫딜 카드 -->
+      <g id="carrier-deal-card">
+        <rect x="168" y="240" width="140" height="120" rx="12" fill="#059669"/>
+        <rect x="40" y="260" width="16" height="12" rx="2" fill="#FFFFFF"/>
+        <rect x="36" y="272" width="24" height="4" rx="2" fill="#FFFFFF"/>
+        <text x="28" y="290" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">여행용 캐리어 핫딜</text>
+      </g>
+      
+      <!-- 체코 투어티켓 카드 -->
+      <g id="czech-tour-card">
+        <rect x="320" y="240" width="140" height="120" rx="12" fill="#7C3AED"/>
+        <rect x="40" y="260" width="16" height="16" rx="2" fill="#FFFFFF"/>
+        <rect x="44" y="264" width="8" height="8" fill="#7C3AED"/>
+        <text x="28" y="290" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">체코 투어티켓</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- 지금, 근처에서 할 수 있는 것 섹션 -->
+  <g id="nearby-activities-section">
+    <!-- 제목 -->
+    <g id="nearby-title">
+      <circle cx="24" cy="400" r="8" fill="#666666"/>
+      <path d="M20 400L24 396L28 400L24 404Z" fill="#666666"/>
+      <text x="40" y="408" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000000">지금, 근처에서 할 수 있는 것</text>
+    </g>
+    
+    <!-- 활동 카드들 -->
+    <g id="activity-cards">
+      <!-- 그라데이션 광고 카드 -->
+      <g id="gradient-ad-card">
+        <defs>
+          <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#8B5CF6"/>
+            <stop offset="100%" style="stop-color:#10B981"/>
+          </linearGradient>
+        </defs>
+        <rect x="16" y="420" width="120" height="100" rx="12" fill="url(#gradient1)"/>
+        <rect x="20" y="500" width="40" height="16" rx="8" fill="rgba(0,0,0,0.3)"/>
+        <text x="24" y="512" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#FFFFFF">광고</text>
+      </g>
+      
+      <!-- 빈 카드 1 -->
+      <g id="empty-card-1">
+        <rect x="144" y="420" width="120" height="100" rx="12" fill="#F5F5F5" stroke="#E0E0E0"/>
+        <text x="184" y="470" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#666666">2/47</text>
+      </g>
+      
+      <!-- 빈 카드 2 -->
+      <g id="empty-card-2">
+        <rect x="272" y="420" width="120" height="100" rx="12" fill="#F5F5F5" stroke="#E0E0E0"/>
+        <text x="312" y="470" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#666666">2/47</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- 인기 여행지 섹션 -->
+  <g id="popular-destinations-section">
+    <!-- 제목 -->
+    <text x="16" y="560" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#000000">인기 여행지</text>
+    
+    <!-- 여행지 그리드 -->
+    <g id="destinations-grid">
+      <!-- 첫 번째 줄 -->
+      <g id="first-row-destinations">
+        <!-- 파리 -->
+        <rect x="16" y="580" width="100" height="80" rx="12" fill="#FAFAFA" stroke="#E0E0E0"/>
+        <text x="56" y="625" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#333333">파리</text>
+        
+        <!-- 로마 -->
+        <rect x="124" y="580" width="100" height="80" rx="12" fill="#FAFAFA" stroke="#E0E0E0"/>
+        <text x="164" y="625" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#333333">로마</text>
+        
+        <!-- 오사카 -->
+        <rect x="232" y="580" width="100" height="80" rx="12" fill="#FAFAFA" stroke="#E0E0E0"/>
+        <text x="272" y="625" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#333333">오사카</text>
+      </g>
+      
+      <!-- 두 번째 줄 -->
+      <g id="second-row-destinations">
+        <!-- 바르셀로나 -->
+        <rect x="16" y="668" width="100" height="80" rx="12" fill="#FAFAFA" stroke="#E0E0E0"/>
+        <text x="56" y="713" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#333333">바르셀로나</text>
+        
+        <!-- 런던 -->
+        <rect x="124" y="668" width="100" height="80" rx="12" fill="#FAFAFA" stroke="#E0E0E0"/>
+        <text x="164" y="713" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#333333">런던</text>
+        
+        <!-- 도쿄 -->
+        <rect x="232" y="668" width="100" height="80" rx="12" fill="#FAFAFA" stroke="#E0E0E0"/>
+        <text x="272" y="713" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#333333">도쿄</text>
+      </g>
+      
+      <!-- 세 번째 줄 -->
+      <g id="third-row-destinations">
+        <!-- 방콕 -->
+        <rect x="16" y="756" width="100" height="80" rx="12" fill="#FAFAFA" stroke="#E0E0E0"/>
+        <text x="56" y="801" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#333333">방콕</text>
+        
+        <!-- 다낭 -->
+        <rect x="124" y="756" width="100" height="80" rx="12" fill="#FAFAFA" stroke="#E0E0E0"/>
+        <text x="164" y="801" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#333333">다낭</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- 레이어 구조 표시 -->
+  <g id="layer-structure" opacity="0.8">
+    <!-- 상단 검색바 레이어 -->
+    <rect x="10" y="5" width="355" height="50" fill="none" stroke="#FF0000" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="15" y="15" font-family="Arial, sans-serif" font-size="10" fill="#FF0000">Layer 1: Top Search Bar</text>
+    
+    <!-- 추천 검색어 레이어 -->
+    <rect x="10" y="65" width="355" height="100" fill="none" stroke="#00FF00" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="15" y="75" font-family="Arial, sans-serif" font-size="10" fill="#00FF00">Layer 2: Recommended Search Terms</text>
+    
+    <!-- 추천 상품 레이어 -->
+    <rect x="10" y="175" width="355" height="140" fill="none" stroke="#0000FF" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="15" y="185" font-family="Arial, sans-serif" font-size="10" fill="#0000FF">Layer 3: Recommended Products</text>
+    
+    <!-- 근처 활동 레이어 -->
+    <rect x="10" y="325" width="355" height="120" fill="none" stroke="#FF00FF" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="15" y="335" font-family="Arial, sans-serif" font-size="10" fill="#FF00FF">Layer 4: Nearby Activities</text>
+    
+    <!-- 인기 여행지 레이어 -->
+    <rect x="10" y="455" width="355" height="350" fill="none" stroke="#FFFF00" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="15" y="465" font-family="Arial, sans-serif" font-size="10" fill="#FFFF00">Layer 5: Popular Destinations</text>
+  </g>
+</svg>

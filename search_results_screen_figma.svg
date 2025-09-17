@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375" height="812" viewBox="0 0 375 812" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect width="375" height="812" fill="#FFFFFF"/>
+  
+  <!-- 상단 앱바 -->
+  <g id="top-app-bar">
+    <!-- 뒤로가기 버튼 -->
+    <g id="back-button">
+      <rect x="16" y="44" width="24" height="24" fill="none"/>
+      <path d="M28 56L20 48L28 40" stroke="#000000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    
+    <!-- 제목 -->
+    <text x="187.5" y="60" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#000000" text-anchor="middle">일본 숙소 특가</text>
+    
+    <!-- 장바구니 아이콘 -->
+    <g id="cart-icon">
+      <rect x="315" y="44" width="24" height="24" fill="none"/>
+      <path d="M327 56C327 52.6863 324.314 50 321 50C317.686 50 315 52.6863 315 56C315 59.3137 317.686 62 321 62C324.314 62 327 59.3137 327 56Z" stroke="#000000" stroke-width="2" fill="none"/>
+      <path d="M319 56H323L325 50H317L319 56Z" stroke="#000000" stroke-width="2" fill="none"/>
+    </g>
+    
+    <!-- 더보기 아이콘 -->
+    <g id="more-icon">
+      <rect x="343" y="44" width="24" height="24" fill="none"/>
+      <circle cx="355" cy="50" r="1.5" fill="#000000"/>
+      <circle cx="355" cy="56" r="1.5" fill="#000000"/>
+      <circle cx="355" cy="62" r="1.5" fill="#000000"/>
+    </g>
+  </g>
+  
+  <!-- 탭 네비게이션 메뉴 -->
+  <g id="tab-navigation">
+    <!-- 전체 탭 (선택됨) -->
+    <g id="all-tab">
+      <text x="20" y="100" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FF6B35">전체</text>
+      <rect x="20" y="102" width="30" height="2" fill="#FF6B35"/>
+    </g>
+    
+    <!-- 투어 & 액티비티 탭 -->
+    <text x="80" y="100" font-family="Arial, sans-serif" font-size="14" fill="#000000">투어 &amp; 액티비티</text>
+    
+    <!-- 티켓 & 입장권 탭 -->
+    <text x="200" y="100" font-family="Arial, sans-serif" font-size="14" fill="#000000">티켓 &amp; 입장권</text>
+    
+    <!-- 교통 탭 -->
+    <text x="300" y="100" font-family="Arial, sans-serif" font-size="14" fill="#000000">교통</text>
+  </g>
+  
+  <!-- 필터 및 정렬 옵션 -->
+  <g id="filter-sort-section">
+    <!-- 날짜 필터 -->
+    <g id="date-filter">
+      <rect x="16" y="120" width="60" height="32" fill="none"/>
+      <path d="M20 128C20 126.895 20.895 126 22 126H30C31.105 126 32 126.895 32 128C32 129.105 31.105 130 30 130H22C20.895 130 20 129.105 20 128Z" fill="#666666"/>
+      <text x="36" y="140" font-family="Arial, sans-serif" font-size="12" fill="#000000">날짜</text>
+      <path d="M70 132L74 128L78 132" stroke="#666666" stroke-width="1" fill="none"/>
+    </g>
+    
+    <!-- 필터 -->
+    <g id="filter">
+      <rect x="100" y="120" width="50" height="32" fill="none"/>
+      <path d="M104 128H108M104 132H108M104 136H108" stroke="#666666" stroke-width="1"/>
+      <text x="112" y="140" font-family="Arial, sans-serif" font-size="12" fill="#000000">필터</text>
+      <path d="M144 132L148 128L152 132" stroke="#666666" stroke-width="1" fill="none"/>
+    </g>
+    
+    <!-- 정렬 -->
+    <g id="sort">
+      <rect x="280" y="120" width="80" height="32" fill="none"/>
+      <text x="284" y="140" font-family="Arial, sans-serif" font-size="12" fill="#000000">1L 추천순</text>
+      <path d="M354 128L358 124L362 128" stroke="#666666" stroke-width="1" fill="none"/>
+    </g>
+  </g>
+  
+  <!-- 검색 결과 개수 -->
+  <g id="search-results-count">
+    <text x="16" y="180" font-family="Arial, sans-serif" font-size="14" fill="#666666">검색결과 3개</text>
+  </g>
+  
+  <!-- 상품 카드 목록 -->
+  <g id="product-cards">
+    <!-- 첫 번째 상품 카드 -->
+    <g id="product-card-1">
+      <!-- 카드 배경 -->
+      <rect x="16" y="200" width="343" height="280" rx="12" fill="#FFFFFF" stroke="#E0E0E0"/>
+      
+      <!-- 상품 이미지 -->
+      <rect x="28" y="212" width="319" height="150" rx="8" fill="#E8F4FD"/>
+      
+      <!-- 수중 풍경 이미지 시뮬레이션 -->
+      <g id="underwater-scene">
+        <!-- 물고기들 -->
+        <ellipse cx="100" cy="250" rx="8" ry="4" fill="#FFD700"/>
+        <ellipse cx="120" cy="260" rx="6" ry="3" fill="#FFD700"/>
+        <ellipse cx="140" cy="245" rx="7" ry="3.5" fill="#FFD700"/>
+        <ellipse cx="160" cy="255" rx="5" ry="2.5" fill="#FFD700"/>
+        
+        <!-- 스쿠버 다이버 -->
+        <circle cx="200" cy="280" r="15" fill="#FF6B35"/>
+        <rect x="195" y="295" width="10" height="20" fill="#4169E1"/>
+        <rect x="190" y="315" width="20" height="8" fill="#000000"/>
+        
+        <!-- 물방울들 -->
+        <circle cx="80" cy="220" r="2" fill="#87CEEB"/>
+        <circle cx="90" cy="210" r="1.5" fill="#87CEEB"/>
+        <circle cx="70" cy="230" r="1" fill="#87CEEB"/>
+      </g>
+      
+      <!-- 하트 아이콘 (우측 상단) -->
+      <g id="heart-icon">
+        <rect x="327" y="220" width="20" height="20" rx="10" fill="rgba(0,0,0,0.5)"/>
+        <path d="M335 225C335 223 336 222 337 222C338 222 339 223 339 225C339 227 337 230 337 230C337 230 335 227 335 225Z" fill="#FFFFFF"/>
+      </g>
+      
+      <!-- UNIVERSAL STUDIOS JAPAN 오버레이 -->
+      <g id="overlay-text">
+        <rect x="28" y="342" width="200" height="20" rx="8" fill="rgba(0,0,0,0.7)"/>
+        <text x="40" y="354" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#FFFFFF">UNIVERSAL STUDIOS JAPAN</text>
+      </g>
+      
+      <!-- 카테고리 -->
+      <text x="28" y="390" font-family="Arial, sans-serif" font-size="12" fill="#666666">테마파크 • 오사카</text>
+      
+      <!-- 제목 -->
+      <text x="28" y="410" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000000">오사카 유니버설 스튜디오 재팬 입장권</text>
+      
+      <!-- 태그 칩들 -->
+      <g id="tags">
+        <rect x="28" y="420" width="80" height="20" rx="10" fill="#F0F0F0"/>
+        <text x="38" y="432" font-family="Arial, sans-serif" font-size="10" fill="#666666">오늘부터 이용 가능</text>
+        
+        <rect x="116" y="420" width="90" height="20" rx="10" fill="#F0F0F0"/>
+        <text x="126" y="432" font-family="Arial, sans-serif" font-size="10" fill="#666666">예약 즉시 확정</text>
+      </g>
+      
+      <!-- 평점 -->
+      <g id="rating">
+        <!-- 별들 -->
+        <g id="stars">
+          <path d="M28 450L30 456L36 456L31 460L33 466L28 462L23 466L25 460L20 456L26 456Z" fill="#FFD700"/>
+          <path d="M36 450L38 456L44 456L39 460L41 466L36 462L31 466L33 460L28 456L34 456Z" fill="#FFD700"/>
+          <path d="M44 450L46 456L52 456L47 460L49 466L44 462L39 466L41 460L36 456L42 456Z" fill="#FFD700"/>
+          <path d="M52 450L54 456L60 456L55 460L57 466L52 462L47 466L49 460L44 456L50 456Z" fill="#FFD700"/>
+          <path d="M60 450L62 456L68 456L63 460L65 466L60 462L55 466L57 460L52 456L58 456Z" fill="#FFD700"/>
+        </g>
+        <text x="76" y="460" font-family="Arial, sans-serif" font-size="12" fill="#666666">4.8 (76,225) • 4M+ 명의 선택</text>
+      </g>
+      
+      <!-- 가격 -->
+      <text x="300" y="460" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#FF6B35" text-anchor="end">₩ 87,700 부터</text>
+      
+      <!-- 특별 혜택 -->
+      <rect x="28" y="470" width="200" height="20" rx="4" fill="#FFF3E0"/>
+      <text x="38" y="482" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#FF6B35">간사이 조이 패스 구매시 eSIM 무료 제공</text>
+    </g>
+    
+    <!-- 두 번째 상품 카드 (부분적으로 보임) -->
+    <g id="product-card-2">
+      <!-- 카드 배경 -->
+      <rect x="16" y="500" width="343" height="280" rx="12" fill="#FFFFFF" stroke="#E0E0E0"/>
+      
+      <!-- 상품 이미지 -->
+      <rect x="28" y="512" width="319" height="150" rx="8" fill="#E8F4FD"/>
+      
+      <!-- 수중 풍경 이미지 시뮬레이션 -->
+      <g id="underwater-scene-2">
+        <!-- 물고기들 -->
+        <ellipse cx="100" cy="550" rx="8" ry="4" fill="#FFD700"/>
+        <ellipse cx="120" cy="560" rx="6" ry="3" fill="#FFD700"/>
+        <ellipse cx="140" cy="545" rx="7" ry="3.5" fill="#FFD700"/>
+        <ellipse cx="160" cy="555" rx="5" ry="2.5" fill="#FFD700"/>
+        
+        <!-- 스쿠버 다이버 -->
+        <circle cx="200" cy="580" r="15" fill="#FF6B35"/>
+        <rect x="195" y="595" width="10" height="20" fill="#4169E1"/>
+        <rect x="190" y="615" width="20" height="8" fill="#000000"/>
+        
+        <!-- 물방울들 -->
+        <circle cx="80" cy="520" r="2" fill="#87CEEB"/>
+        <circle cx="90" cy="510" r="1.5" fill="#87CEEB"/>
+        <circle cx="70" cy="530" r="1" fill="#87CEEB"/>
+      </g>
+      
+      <!-- 하트 아이콘 (우측 상단) -->
+      <g id="heart-icon-2">
+        <rect x="327" y="520" width="20" height="20" rx="10" fill="rgba(0,0,0,0.5)"/>
+        <path d="M335 525C335 523 336 522 337 522C338 522 339 523 339 525C339 527 337 530 337 530C337 530 335 527 335 525Z" fill="#FFFFFF"/>
+      </g>
+      
+      <!-- UNIVERSAL STUDIOS JAPAN 오버레이 -->
+      <g id="overlay-text-2">
+        <rect x="28" y="642" width="200" height="20" rx="8" fill="rgba(0,0,0,0.7)"/>
+        <text x="40" y="654" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#FFFFFF">UNIVERSAL STUDIOS JAPAN</text>
+      </g>
+    </g>
+    
+    <!-- 세 번째 상품 카드 (상단 일부만 보임) -->
+    <g id="product-card-3">
+      <!-- 카드 배경 -->
+      <rect x="16" y="800" width="343" height="280" rx="12" fill="#FFFFFF" stroke="#E0E0E0"/>
+      
+      <!-- 상품 이미지 -->
+      <rect x="28" y="812" width="319" height="150" rx="8" fill="#E8F4FD"/>
+      
+      <!-- 수중 풍경 이미지 시뮬레이션 -->
+      <g id="underwater-scene-3">
+        <!-- 물고기들 -->
+        <ellipse cx="100" cy="850" rx="8" ry="4" fill="#FFD700"/>
+        <ellipse cx="120" cy="860" rx="6" ry="3" fill="#FFD700"/>
+        <ellipse cx="140" cy="845" rx="7" ry="3.5" fill="#FFD700"/>
+        <ellipse cx="160" cy="855" rx="5" ry="2.5" fill="#FFD700"/>
+        
+        <!-- 스쿠버 다이버 -->
+        <circle cx="200" cy="880" r="15" fill="#FF6B35"/>
+        <rect x="195" y="895" width="10" height="20" fill="#4169E1"/>
+        <rect x="190" y="915" width="20" height="8" fill="#000000"/>
+        
+        <!-- 물방울들 -->
+        <circle cx="80" cy="820" r="2" fill="#87CEEB"/>
+        <circle cx="90" cy="810" r="1.5" fill="#87CEEB"/>
+        <circle cx="70" cy="830" r="1" fill="#87CEEB"/>
+      </g>
+      
+      <!-- 하트 아이콘 (우측 상단) -->
+      <g id="heart-icon-3">
+        <rect x="327" y="820" width="20" height="20" rx="10" fill="rgba(0,0,0,0.5)"/>
+        <path d="M335 825C335 823 336 822 337 822C338 822 339 823 339 825C339 827 337 830 337 830C337 830 335 827 335 825Z" fill="#FFFFFF"/>
+      </g>
+      
+      <!-- UNIVERSAL STUDIOS JAPAN 오버레이 -->
+      <g id="overlay-text-3">
+        <rect x="28" y="942" width="200" height="20" rx="8" fill="rgba(0,0,0,0.7)"/>
+        <text x="40" y="954" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#FFFFFF">UNIVERSAL STUDIOS JAPAN</text>
+      </g>
+    </g>
+  </g>
+</svg>
