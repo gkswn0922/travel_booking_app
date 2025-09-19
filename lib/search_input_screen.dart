@@ -39,11 +39,9 @@ class _SearchInputScreenState extends State<SearchInputScreen> {
                   children: [
                     _buildRecommendedSearchTerms(),
                     const SizedBox(height: 20),
-                    _buildPopularTravelSection(),
-                    const SizedBox(height: 20),
-                    _buildNearbyActivitiesSection(),
-                    const SizedBox(height: 20),
                     _buildPopularDestinationsSection(),
+                    const SizedBox(height: 20),
+                    _buildPopularTravelSection(),
                     const SizedBox(height: 20),
                   ],
                 ),
@@ -95,7 +93,7 @@ class _SearchInputScreenState extends State<SearchInputScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            '추천 검색어',
+            '최근 검색어',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -103,16 +101,22 @@ class _SearchInputScreenState extends State<SearchInputScreen> {
             ),
           ),
           const SizedBox(height: 12),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              _buildSearchTermChip('일본 숙소 특가'),
-              _buildSearchTermChip('인기 지역 숙소 특가 진행 중'),
-              _buildSearchTermChip('도쿄 호텔 할인'),
-              _buildSearchTermChip('오사카 여행 패키지'),
-              _buildSearchTermChip('후쿠오카 특가 항공권'),
-            ],
+          SizedBox(
+            height: 40,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                _buildSearchTermChip('일본 숙소 특가'),
+                const SizedBox(width: 8),
+                _buildSearchTermChip('인기 지역 숙소 특가 진행 중'),
+                const SizedBox(width: 8),
+                _buildSearchTermChip('도쿄 호텔 할인'),
+                const SizedBox(width: 8),
+                _buildSearchTermChip('오사카 여행 패키지'),
+                const SizedBox(width: 8),
+                _buildSearchTermChip('후쿠오카 특가 항공권'),
+              ],
+            ),
           ),
         ],
       ),
@@ -155,28 +159,28 @@ class _SearchInputScreenState extends State<SearchInputScreen> {
               color: Colors.black,
             ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 18),
           SizedBox(
-            height: 120,
+            height: 350,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
                 _buildTravelCard(
-                  '여행용 샤워필터',
-                  const Color(0xFF1E3A8A),
-                  Icons.water_drop,
+                  '대만 eSIM 특가',
+                  const Color(0xFF4A90E2),
+                  Icons.sim_card,
                 ),
                 const SizedBox(width: 12),
                 _buildTravelCard(
-                  '여행용 캐리어 핫딜',
+                  '일본 여행 패키지',
                   const Color(0xFF059669),
-                  Icons.luggage,
+                  Icons.flight_takeoff,
                 ),
                 const SizedBox(width: 12),
                 _buildTravelCard(
-                  '체코 투어티켓',
+                  '유럽 호텔 할인',
                   const Color(0xFF7C3AED),
-                  Icons.location_city,
+                  Icons.hotel,
                 ),
               ],
             ),
@@ -186,45 +190,155 @@ class _SearchInputScreenState extends State<SearchInputScreen> {
     );
   }
 
-  Widget _buildTravelCard(String title, Color color, IconData icon) {
+  Widget _buildTravelCard(String title, Color color, IconData icon, {String? imageUrl}) {
     return GestureDetector(
       onTap: () => _performSearch(title),
-      child: Container(
-        width: 140,
+        child: Container(
+          width: 200,
+          height: 350,
         decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(10.0),
+          color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: color.withOpacity(0.3),
-              spreadRadius: 1,
-              blurRadius: 5,
-              offset: const Offset(0, 2),
+              color: Colors.black.withOpacity(0.1),
+              spreadRadius: 0,
+              blurRadius: 20,
+              offset: const Offset(0, 4),
             ),
           ],
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                icon,
-                color: Colors.white,
-                size: 24,
-              ),
-              const SizedBox(height: 8),
-              Text(
-                title,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // 상단 이미지 영역 (일본 벚꽃 풍경 테마)
+            Expanded(
+              flex: 3,
+              child: ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(10.0),
+                  topRight: Radius.circular(10.0),
+                ),
+                child: Container(
+                  width: double.infinity,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      // 로컬 assets 이미지 사용
+                      Image.asset(
+                        'image.png',
+                        fit: BoxFit.contain,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ],
-          ),
+            ),
+                    // 하단 텍스트 영역 (오버플로우 수정)
+            Expanded(
+              flex: 2,
+              child: Container(
+                padding: const EdgeInsets.fromLTRB(12, 8, 12, 8), // 상하 패딩 줄임
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // 제품명
+                        Text(
+                          title,
+                          style: const TextStyle(
+                            fontSize: 13, // 폰트 크기 약간 줄임
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFF374151),
+                          ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(height: 4), // 간격 줄임
+                        // 가격
+                        Text(
+                          '3,500원',
+                          style: const TextStyle(
+                            fontSize: 15, // 폰트 크기 약간 줄임
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xFF374151),
+                          ),
+                        ),
+                      ],
+                    ),
+                    // 하단 행: 평점/리뷰 + 회사명
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // 평점과 리뷰
+                        Row(
+                          children: [
+                            const Icon(
+                              Icons.star,
+                              color: Colors.red,
+                              size: 14, // 아이콘 크기 줄임
+                            ),
+                            const SizedBox(width: 3),
+                            Text(
+                              '4.34(76)',
+                              style: TextStyle(
+                                color: Colors.grey[700],
+                                fontSize: 11, // 폰트 크기 줄임
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                        // 회사명과 화살표
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                '주식회사 링톡',
+                                style: TextStyle(
+                                  color: Colors.grey[700],
+                                  fontSize: 11, // 폰트 크기 줄임
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              const SizedBox(width: 3),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.grey[600],
+                                size: 10, // 아이콘 크기 줄임
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTechBadge(String text, Color textColor, Color backgroundColor) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: textColor,
+          fontSize: 10,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );
@@ -338,7 +452,7 @@ class _SearchInputScreenState extends State<SearchInputScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            '인기 여행지',
+            '인기 검색어',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -346,22 +460,15 @@ class _SearchInputScreenState extends State<SearchInputScreen> {
             ),
           ),
           const SizedBox(height: 12),
-          GridView.count(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            crossAxisCount: 3,
-            crossAxisSpacing: 12,
-            mainAxisSpacing: 12,
-            childAspectRatio: 1.2,
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
             children: [
-              _buildDestinationButton('파리'),
-              _buildDestinationButton('로마'),
-              _buildDestinationButton('오사카'),
-              _buildDestinationButton('바르셀로나'),
-              _buildDestinationButton('런던'),
-              _buildDestinationButton('도쿄'),
-              _buildDestinationButton('방콕'),
-              _buildDestinationButton('다낭'),
+              _buildSearchTermChip('일본 숙소 특가'),
+              _buildSearchTermChip('인기 지역 숙소 특가 진행 중'),
+              _buildSearchTermChip('도쿄 호텔 할인'),
+              _buildSearchTermChip('오사카 여행 패키지'),
+              _buildSearchTermChip('후쿠오카 특가 항공권'),
             ],
           ),
         ],

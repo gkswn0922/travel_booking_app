@@ -1,0 +1,17 @@
+{
+  "name": "travel_booking_app",
+  "version": "1.0.0",
+  "description": "A travel booking app with Korean UI",
+  "scripts": {
+    "start": "flutter run",
+    "build": "flutter build",
+    "test": "flutter test"
+  },
+  "devDependencies": {
+    "figma-developer-mcp": "latest"
+  },
+  "keywords": ["flutter", "travel", "booking", "figma"],
+  "author": "",
+  "license": "MIT"
+}
+
