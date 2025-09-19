@@ -465,5 +465,8 @@ class _SearchResultsScreenState extends State<SearchResultsScreen> {
     );
   }
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/main

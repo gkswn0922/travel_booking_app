@@ -421,4 +421,7 @@ class EventNotice {
     required this.category,
   });
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
