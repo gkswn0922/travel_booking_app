@@ -44,12 +44,16 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // 상단 검색바와 아이콘들
-              _buildTopSection(),
-              const SizedBox(height: 16),
+              _buildSearchSection(),
+              const SizedBox(height: 6),
               
               // 프로모션 배너
               _buildPromotionBanner(),
-              const SizedBox(height: 20),
+              const SizedBox(height: 16),
+              
+              // 작은 프로모션 배너
+              _buildSmallPromotionBanner(),
+              const SizedBox(height: 24),
               
               // 카테고리 섹션 (6개)
               _buildCategorySection(),
@@ -70,49 +74,135 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildTopSection() {
-    return Container(
-      height: 300, // 배경 이미지를 위한 높이 설정
-      decoration: const BoxDecoration(
-        color: Colors.black, // 검은색 배경
-        image: DecorationImage(
-          image: NetworkImage(
-            'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-          ),
-          fit: BoxFit.cover,
-        ),
-      ),
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Colors.black.withOpacity(0.4),
-              Colors.black.withOpacity(0.2),
-              Colors.transparent,
-            ],
-          ),
-        ),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 0, bottom: 200),
-            child: Row(
-              children: [
-                // 검색바
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SearchInputScreen(),
+  Widget _buildSearchSection() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      child: Row(
+        children: [
+          const SizedBox(width: 5),
+          // 검색바
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SearchInputScreen(),
+                  ),
+                );
+              },
+              child: Container(
+                height: 44,
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: Colors.black,
+                    width: 1.5,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.08),
+                      blurRadius: 12,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: const Row(
+                  children: [
+                    Icon(Icons.search, color: Color(0xFF999999), size: 20),
+                    SizedBox(width: 16),
+                    Expanded(
+                      child: Text(
+                        '링톡 일본 이심 30% 할인',
+                        style: TextStyle(
+                          color: Color(0xFF666666),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
                         ),
-                      );
-                    },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(width: 12),
+          
+          // 알림 아이콘
+          const Icon(
+            Icons.notifications_outlined,
+            color: Color(0xFF666666),
+            size: 24,
+          ),
+          const SizedBox(width: 8),
+          
+          // 장바구니 아이콘
+          const Icon(
+            Icons.shopping_cart_outlined,
+            color: Color(0xFF666666),
+            size: 24,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPromotionBanner() {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      child: AspectRatio(
+        aspectRatio: 5/4, // 5:4 비율
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            image: const DecorationImage(
+              image: NetworkImage(
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+              ),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.black.withOpacity(0.3),
+                  Colors.black.withOpacity(0.1),
+                  Colors.transparent,
+                ],
+              ),
+            ),
+            child: Stack(
+              children: [
+                // 상단 텍스트
+                Positioned(
+                  top: 20,
+                  left: 20,
+                  child: const Text(
+                    '링톡 & 유티스',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                
+                // 하단 버튼
+                Positioned(
+                  bottom: 20,
+                  left: 0,
+                  right: 0,
+                  child: Center(
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.9),
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(25),
                         boxShadow: [
                           BoxShadow(
@@ -122,77 +212,71 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ],
                       ),
-                      child: const Row(
-                        children: [
-                          Icon(Icons.search, color: Color(0xFF808080), size: 20),
-                          SizedBox(width: 12),
-                          Text(
-                            '링톡 일본 이심 30프로 할인',
-                            style: TextStyle(
-                              color: Color(0xFF808080),
-                              fontSize: 16,
-                            ),
-                          ),
-                        ],
+                      child: const Text(
+                        '특가 확인하기',
+                        style: TextStyle(
+                          color: Color(0xFF333333),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(width: 12),
                 
-                // 알림 아이콘
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.9),
-                    borderRadius: BorderRadius.circular(25),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        blurRadius: 8,
-                        offset: const Offset(0, 2),
+                // 우하단 5G eSIM 배지
+                Positioned(
+                  bottom: 20,
+                  right: 20,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF007AFF),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Text(
+                          '5G',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF007AFF),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Text(
+                          'eSIM',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ],
-                  ),
-                  child: const Icon(
-                    Icons.notifications_outlined,
-                    color: Color(0xFF808080),
-                    size: 20,
-                  ),
-                ),
-                const SizedBox(width: 8),
-                
-                // 장바구니 아이콘
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.9),
-                    borderRadius: BorderRadius.circular(25),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        blurRadius: 8,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                  child: const Icon(
-                    Icons.shopping_cart_outlined,
-                    color: Color(0xFF808080),
-                    size: 20,
                   ),
                 ),
               ],
             ),
           ),
+        ),
       ),
     );
   }
 
-  Widget _buildPromotionBanner() {
+  Widget _buildSmallPromotionBanner() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           begin: Alignment.topLeft,
@@ -208,21 +292,40 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Row(
         children: [
-          // 티켓 아이콘
-          Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              // ignore: deprecated_member_use
-              color: Colors.white.withOpacity(0.2),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: const Icon(
-              Icons.confirmation_number,
-              color: Colors.white,
-              size: 24,
-            ),
+          // 티켓 아이콘들
+          Stack(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(6),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: const Icon(
+                  Icons.confirmation_number,
+                  color: Colors.white,
+                  size: 20,
+                ),
+              ),
+              Positioned(
+                left: 6,
+                top: 3,
+                child: Container(
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: const Icon(
+                    Icons.confirmation_number,
+                    color: Colors.white,
+                    size: 14,
+                  ),
+                ),
+              ),
+            ],
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: 12),
           
           // 메시지 텍스트
           const Expanded(
@@ -230,20 +333,29 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '띵동!!! 회원님을 위한 기프트 상품이 도착했어요.',
+                  '띵동!',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: 1),
+                Text(
+                  '회원님을 위한 기프트 상품이 도착했어요.',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 11,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                SizedBox(height: 0),
                 Text(
                   '최대 10% 할인',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
+                    fontSize: 9,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ],
