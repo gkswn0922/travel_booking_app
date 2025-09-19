@@ -539,7 +539,3 @@ class EventBenefit {
     required this.isActive,
   });
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
