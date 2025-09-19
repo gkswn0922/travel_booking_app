@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'hotel_detail_screen.dart';
 import 'search_input_screen.dart';
+import 'product_detail_screen.dart';
 
 void main() {
   runApp(const TravelBookingApp());
@@ -238,13 +239,11 @@ class _HomeScreenState extends State<HomeScreen> {
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
           colors: [
-            Color(0xFF58CCFF),
-            Color(0xFF4AB8FF),
-            Color(0xFF3CA3FF),
-            Color(0xFF2E8EFF),
+            Color(0xFF6BA6F7), // 왼쪽 더 밝은 파란색
+            Color(0xFF4A90E2), // 오른쪽 중간 파란색
           ],
         ),
         borderRadius: BorderRadius.circular(12),
@@ -363,7 +362,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Icon(
             icon,
-            color: const Color(0xFF58CCFF),
+            color: const Color(0xFF5F7CF6),
             size: 32,
           ),
           const SizedBox(height: 8),
@@ -397,18 +396,32 @@ Widget _buildPopularProductSection() {
         const SizedBox(height: 16),
         
         // 상품 카드
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.05),
-                blurRadius: 10,
-                offset: const Offset(0, 2),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProductDetailScreen(
+                  productName: 'JR 하루카 간사이 공항 특급 열차 티켓',
+                  productImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                  price: '₩ 11,300~',
+                  discount: 'KRW 1,000원 할인',
+                ),
               ),
-            ],
-          ),
+            );
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  blurRadius: 10,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
           child: Column(
             children: [
               // 상품 이미지 영역 (더 큰 크기)
@@ -520,6 +533,7 @@ Widget _buildPopularProductSection() {
             ],
           ),
         ),
+      ),
       ],
     ),
   );
@@ -764,7 +778,7 @@ Widget _buildReviewCard(String title, String username, String likes, String imag
             activeIcon: Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: const Color(0xFF58CCFF),
+                color: const Color(0xFF5F7CF6),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: const Icon(

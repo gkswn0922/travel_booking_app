@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'search_results_screen.dart';
+import 'product_detail_screen.dart';
 
 class SearchInputScreen extends StatefulWidget {
   const SearchInputScreen({Key? key}) : super(key: key);
@@ -55,7 +56,7 @@ class _SearchInputScreenState extends State<SearchInputScreen> {
 
   Widget _buildTopSection() {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       child: Row(
         children: [
           IconButton(
@@ -65,22 +66,65 @@ class _SearchInputScreenState extends State<SearchInputScreen> {
           Expanded(
             child: Container(
               height: 40,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
               decoration: BoxDecoration(
-                color: Colors.grey[100],
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: TextField(
-                controller: _searchController,
-                decoration: const InputDecoration(
-                  hintText: '일본 숙소 특가',
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: Colors.black,
+                  width: 1.5,
                 ),
-                onSubmitted: _performSearch,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.08),
+                    blurRadius: 12,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Row(
+                children: [
+                  const Icon(Icons.search, color: Color(0xFF999999), size: 20),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: TextField(
+                      controller: _searchController,
+                      decoration: const InputDecoration(
+                        hintText: '링톡 일본 이심 30% 할인',
+                        hintStyle: TextStyle(
+                          color: Color(0xFF666666),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.zero,
+                      ),
+                      style: const TextStyle(
+                        color: Color(0xFF666666),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      onSubmitted: _performSearch,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
+          const SizedBox(width: 14),
+          // 알림 아이콘
+          const Icon(
+            Icons.notifications_outlined,
+            color: Color(0xFF666666),
+            size: 29,
+          ),
           const SizedBox(width: 8),
+          // 장바구니 아이콘
+          const Icon(
+            Icons.shopping_cart_outlined,
+            color: Color(0xFF666666),
+            size: 29,
+          ),
         ],
       ),
     );
@@ -167,7 +211,7 @@ class _SearchInputScreenState extends State<SearchInputScreen> {
               children: [
                 _buildTravelCard(
                   '대만 eSIM 특가',
-                  const Color(0xFF4A90E2),
+                  const Color(0xFF5F7CF6),
                   Icons.sim_card,
                 ),
                 const SizedBox(width: 12),
@@ -192,7 +236,19 @@ class _SearchInputScreenState extends State<SearchInputScreen> {
 
   Widget _buildTravelCard(String title, Color color, IconData icon, {String? imageUrl}) {
     return GestureDetector(
-      onTap: () => _performSearch(title),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProductDetailScreen(
+              productName: title,
+              productImage: imageUrl ?? 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+              price: '3,500원',
+              discount: '15% 할인',
+            ),
+          ),
+        );
+      },
         child: Container(
           width: 200,
           height: 350,
@@ -241,7 +297,7 @@ class _SearchInputScreenState extends State<SearchInputScreen> {
                 padding: const EdgeInsets.fromLTRB(12, 8, 12, 8), // 상하 패딩 줄임
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -269,6 +325,7 @@ class _SearchInputScreenState extends State<SearchInputScreen> {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 8), // 두 그룹 사이 간격 추가
                     // 하단 행: 평점/리뷰 + 회사명
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
