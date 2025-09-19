@@ -96,6 +96,55 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // 별점과 리뷰 점수
+                  Row(
+                    children: [
+                      // 별점
+                      Row(
+                        children: List.generate(5, (index) {
+                          if (index < 3) {
+                            return const Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                              size: 18,
+                            );
+                          } else if (index == 3) {
+                            return const Icon(
+                              Icons.star_half,
+                              color: Colors.amber,
+                              size: 18,
+                            );
+                          } else {
+                            return const Icon(
+                              Icons.star_border,
+                              color: Colors.amber,
+                              size: 18,
+                            );
+                          }
+                        }),
+                      ),
+                      const SizedBox(width: 6),
+                      const Text(
+                        '3.8',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF333333),
+                        ),
+                      ),
+                      const SizedBox(width: 4),
+                      const Text(
+                        '(2041)',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF333333),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  
                   // 상품명
                   Text(
                     widget.productName,
@@ -153,6 +202,398 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                           ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  
+                  // 프로모션 혜택 안내 박스
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: const Color(0xFFE0E0E0),
+                        width: 1,
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          '프로모션 혜택 안내',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF333333),
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        const Text(
+                          '• 6만원 즉시 할인 (정상가) 269,000원 → 209,000',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF666666),
+                            height: 1.4,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        const Text(
+                          '• 구매자 전원 100% PVC 커버 1개 추가 증정',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF666666),
+                            height: 1.4,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        const Text(
+                          '• 독일산! PC 폴리카보네이트 100%',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF666666),
+                            height: 1.4,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        const Text(
+                          '• 미국에서 인증된 TSA 잠금 장치',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF666666),
+                            height: 1.4,
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        Center(
+                          child: Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: const Color(0xFFE0E0E0),
+                                width: 1,
+                              ),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                '더보기',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Color(0xFF666666),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  
+                  // 결제 안내
+                  Row(
+                    children: [
+                      const Text(
+                        '결제 안내',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF333333),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        width: 16,
+                        height: 16,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFE0E0E0),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Icon(
+                          Icons.help_outline,
+                          color: Color(0xFF666666),
+                          size: 12,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        '배송비',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFF666666),
+                        ),
+                      ),
+                      const Text(
+                        '무료',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFF333333),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        '무이자 할부',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFF666666),
+                        ),
+                      ),
+                      const Text(
+                        '카드 결제 혜택',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFF333333),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  
+                  // 사이즈 옵션
+                  const Text(
+                    '사이즈',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF333333),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: List.generate(5, (index) {
+                      return Container(
+                        margin: const EdgeInsets.only(right: 8),
+                        width: 60,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: const Color(0xFFE0E0E0),
+                            width: 1,
+                          ),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'S',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Color(0xFF666666),
+                            ),
+                          ),
+                        ),
+                      );
+                    }),
+                  ),
+                  const SizedBox(height: 20),
+                  
+                  // 색상 옵션
+                  const Text(
+                    '색상',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF333333),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    children: List.generate(8, (index) {
+                      return Container(
+                        width: 60,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: const Color(0xFFE0E0E0),
+                            width: 1,
+                          ),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            '빨강',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Color(0xFF666666),
+                            ),
+                          ),
+                        ),
+                      );
+                    }),
+                  ),
+                  const SizedBox(height: 20),
+                  
+                  // HOT 리뷰 섹션
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'HOT 리뷰',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF577DFE),
+                        ),
+                      ),
+                      const Text(
+                        '더보기 >',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF666666),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  
+                  // 리뷰 통계 박스
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: const Color(0xFFE0E0E0),
+                        width: 1,
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            // 왼쪽: 상품만족도
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  const Text(
+                                    '상품만족도',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color(0xFF666666),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  const Text(
+                                    '4.2 / 5',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xFF333333),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Icon(
+                                        Icons.star,
+                                        color: Color(0xFF577DFE),
+                                        size: 16,
+                                      ),
+                                      const SizedBox(width: 4),
+                                      const Text(
+                                        '만족해요',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Color(0xFF577DFE),
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 8),
+                                  const Text(
+                                    '305개의 리뷰 확인하기',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color(0xFF666666),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            
+                            // 중간 구분선
+                            Container(
+                              width: 1,
+                              height: 100,
+                              margin: const EdgeInsets.only(left: 4),
+                              color: const Color(0xFFE0E0E0),
+                            ),
+                            
+                            // 오른쪽: 별점 분포 차트
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  _buildRatingBar('5점', 96, true),
+                                  const SizedBox(height: 4),
+                                  _buildRatingBar('4점', 14, false),
+                                  const SizedBox(height: 4),
+                                  _buildRatingBar('3점', 7, false),
+                                  const SizedBox(height: 4),
+                                  _buildRatingBar('2점', 0, false),
+                                  const SizedBox(height: 4),
+                                  _buildRatingBar('1점', 0, false),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  
+                  // 리뷰 사진 박스들
+                  Row(
+                    children: [
+                      Expanded(
+                        child: _buildReviewPhotoBox(
+                          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                          '효도여행시켜준다고 딸이 주문해준 캐리어랑 베트남여행 잘...',
+                          'djskdj434',
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: _buildReviewPhotoBox(
+                          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                          '효도여행시켜준다고 딸이 주문해준 캐리어랑 베트남여행 잘...',
+                          'djskdj434',
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: _buildReviewPhotoBox(
+                          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                          '효도여행시켜준다고 딸이 주문해준 캐리어랑 베트남여행 잘...',
+                          'djskdj434',
                         ),
                       ),
                     ],
@@ -288,6 +729,173 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 fontSize: 14,
                 color: Color(0xFF333333),
               ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+  
+  Widget _buildRatingBar(String label, int percentage, bool isHighlighted) {
+    return Row(
+      children: [
+        SizedBox(
+          width: 30,
+          child: Text(
+            label,
+            style: const TextStyle(
+              fontSize: 12,
+              color: Color(0xFF666666),
+            ),
+          ),
+        ),
+        const SizedBox(width: 8),
+        Expanded(
+          child: Container(
+            height: 8,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: percentage,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: isHighlighted ? const Color(0xFF577DFE) : const Color(0xFFE0E0E0),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 100 - percentage,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF5F5F5),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(width: 8),
+        SizedBox(
+          width: 30,
+          child: Text(
+            '$percentage%',
+            style: const TextStyle(
+              fontSize: 12,
+              color: Color(0xFF666666),
+            ),
+            textAlign: TextAlign.right,
+          ),
+        ),
+      ],
+    );
+  }
+  
+  Widget _buildReviewPhotoBox(String imageUrl, String reviewText, String userId) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: const Color(0xFFE0E0E0),
+          width: 1,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // 사진 영역
+          AspectRatio(
+            aspectRatio: 1,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(12),
+                  topRight: Radius.circular(12),
+                ),
+                image: DecorationImage(
+                  image: NetworkImage(imageUrl),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Stack(
+                children: [
+                  // 북마크 아이콘
+                  Positioned(
+                    top: 8,
+                    right: 8,
+                    child: Container(
+                      width: 24,
+                      height: 24,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: const Icon(
+                        Icons.bookmark_border,
+                        color: Color(0xFF666666),
+                        size: 16,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          
+          // 리뷰 내용
+          Padding(
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // 별점
+                Row(
+                  children: List.generate(5, (index) {
+                    if (index < 4) {
+                      return const Icon(
+                        Icons.star,
+                        color: Color(0xFF577DFE),
+                        size: 14,
+                      );
+                    } else {
+                      return const Icon(
+                        Icons.star_border,
+                        color: Color(0xFF577DFE),
+                        size: 14,
+                      );
+                    }
+                  }),
+                ),
+                const SizedBox(height: 8),
+                
+                // 리뷰 텍스트
+                Text(
+                  reviewText,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: Color(0xFF333333),
+                    height: 1.3,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 8),
+                
+                // 사용자 ID
+                Text(
+                  userId,
+                  style: const TextStyle(
+                    fontSize: 11,
+                    color: Color(0xFF666666),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
