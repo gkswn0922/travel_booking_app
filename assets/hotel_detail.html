@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Forza Sapporo Station - 마이리얼트립</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* 상단 앱바 */
+        .app-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 56px;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            z-index: 1000;
+        }
+
+        .back-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-container {
+            flex: 1;
+            margin: 0 16px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            height: 40px;
+            padding: 0 16px 0 40px;
+            border: none;
+            background: #f3f4f6;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+        }
+
+        .app-bar-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 메인 이미지 섹션 */
+        .hero-section {
+            margin-top: 56px;
+            height: 300px;
+            background: linear-gradient(135deg, #1e3a8a, #1e40af);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+        }
+
+        .hotel-icon {
+            font-size: 80px;
+            margin-bottom: 16px;
+        }
+
+        .hotel-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .image-indicators {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .indicator.active {
+            background: white;
+        }
+
+        /* 콘텐츠 섹션 */
+        .content {
+            padding: 16px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        /* 호텔 정보 */
+        .hotel-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .rating-badge {
+            background: #f97316;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .star {
+            color: #fbbf24;
+        }
+
+        .facilities {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .facility-chip {
+            background: #f3f4f6;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            color: #374151;
+        }
+
+        /* 결제 혜택 */
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .benefit-bar {
+            width: 4px;
+            height: 40px;
+            background: #3b82f6;
+            border-radius: 2px;
+        }
+
+        .benefit-content h4 {
+            color: #3b82f6;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .benefit-content p {
+            font-size: 12px;
+            color: #374151;
+        }
+
+        /* 위치 섹션 */
+        .map-placeholder {
+            height: 200px;
+            background: #e5e7eb;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .map-icon {
+            font-size: 48px;
+            color: #9ca3af;
+            margin-bottom: 8px;
+        }
+
+        .address {
+            font-size: 14px;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .location-rating {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .copy-btn {
+            background: none;
+            border: none;
+            color: #3b82f6;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* 객실 선택 */
+        .date-info {
+            background: #fef3c7;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .date-text {
+            color: #f59e0b;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .urgency-text {
+            color: #dc2626;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .room-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .room-card.selected {
+            border-color: #3b82f6;
+            border-width: 2px;
+        }
+
+        .room-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .room-name {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .check-icon {
+            color: #3b82f6;
+        }
+
+        .cancellation-info {
+            color: #059669;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .room-features {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .feature-tag {
+            background: #f3f4f6;
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #374151;
+        }
+
+        .room-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #dc2626;
+        }
+
+        .tax-info {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-left: 8px;
+        }
+
+        .option-btn {
+            background: none;
+            border: none;
+            color: #3b82f6;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* 근처 숙소 */
+        .nearby-hotels {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+
+        .hotel-card {
+            min-width: 200px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 12px;
+        }
+
+        .hotel-image {
+            height: 100px;
+            background: #e5e7eb;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .hotel-icon-small {
+            font-size: 40px;
+            color: #9ca3af;
+        }
+
+        .hotel-name {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hotel-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 4px;
+        }
+
+        .hotel-price {
+            font-size: 14px;
+            font-weight: bold;
+            color: #dc2626;
+        }
+
+        /* 하단 바 */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .booking-info {
+            flex: 1;
+        }
+
+        .booking-date {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        .booking-price {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .book-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .book-btn:hover {
+            background: #2563eb;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .content {
+                padding: 12px;
+            }
+            
+            .section {
+                padding: 12px;
+            }
+            
+            .room-features {
+                gap: 8px;
+            }
+            
+            .facilities {
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 상단 앱바 -->
+    <div class="app-bar">
+        <button class="back-btn" onclick="goBack()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        
+        <div class="search-container">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <input type="text" class="search-input" placeholder="검색어를 입력하세요" value="일본 숙소 특가">
+        </div>
+        
+        <div class="app-bar-actions">
+            <button class="action-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="action-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" stroke="currentColor" stroke-width="2"/>
+                    <path d="M21 3v5h-5" stroke="currentColor" stroke-width="2"/>
+                    <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" stroke="currentColor" stroke-width="2"/>
+                    <path d="M3 21v-5h5" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="action-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- 메인 이미지 섹션 -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="hotel-icon">🏨</div>
+            <div class="hotel-title">Hotel Forza Sapporo Station</div>
+        </div>
+        <div class="image-indicators">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+    </div>
+
+    <!-- 메인 콘텐츠 -->
+    <div class="content">
+        <!-- 호텔 정보 섹션 -->
+        <div class="section">
+            <div class="hotel-info">
+                <span class="rating-badge">3성급</span>
+                <span style="color: #9ca3af; font-size: 14px;">호텔</span>
+            </div>
+            
+            <div class="rating">
+                <span class="star">⭐</span>
+                <span style="font-size: 16px; font-weight: bold;">4.5</span>
+                <span style="color: #9ca3af; font-size: 14px;">·후기 675개</span>
+            </div>
+            
+            <div class="facilities">
+                <span class="facility-chip">무료 WiFi</span>
+                <span class="facility-chip">24시간 운영</span>
+                <span class="facility-chip">자판기</span>
+            </div>
+        </div>
+
+        <!-- 결제 혜택 섹션 -->
+        <div class="section">
+            <h3 class="section-title">결제 혜택</h3>
+            
+            <div class="benefit-item">
+                <div class="benefit-bar"></div>
+                <div class="benefit-content">
+                    <h4>KB국민카드</h4>
+                    <p>KB국민카드 즉시 할인(최대 5만원)</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-bar"></div>
+                <div class="benefit-content">
+                    <h4>카카오페이머니</h4>
+                    <p>카카오페이머니 / 삼성카드 최대 4만원 즉시할인</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-bar"></div>
+                <div class="benefit-content">
+                    <h4>삼성카드</h4>
+                    <p>최대 6만원 결제일 할인</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-bar"></div>
+                <div class="benefit-content">
+                    <h4>현대카드</h4>
+                    <p>M포인트 10% 사용가능 (최대 15,000 M포인트)</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-bar"></div>
+                <div class="benefit-content">
+                    <h4>무이자할부</h4>
+                    <p>최대 24개월 무이자 할부 가능</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 숙소 위치 섹션 -->
+        <div class="section">
+            <h3 class="section-title">숙소 위치</h3>
+            
+            <div class="map-placeholder">
+                <div class="map-icon">🗺️</div>
+                <div style="font-size: 16px; color: #9ca3af;">Google Maps</div>
+            </div>
+            
+            <div class="address">
+                1-1, Nishi2-Chome, Kita3-Jo, Chuo-Ku, Sapporo, Sapporo, Hokkaido, 일본, 060-0003
+            </div>
+            
+            <div class="location-rating">
+                <div style="display: flex; align-items: center; gap: 4px;">
+                    <span class="star">⭐</span>
+                    <span style="font-size: 14px; color: #9ca3af;">4.9 · 후기 36개</span>
+                </div>
+                <button class="copy-btn">주소복사</button>
+            </div>
+        </div>
+
+        <!-- 객실 선택 섹션 -->
+        <div class="section">
+            <h3 class="section-title">객실 선택</h3>
+            
+            <div class="date-info">
+                <div class="date-text">10/8(수) - 10/9(목) · 1박성인 2명</div>
+            </div>
+            
+            <div class="urgency-text">서두르세요! 객실이 얼마 남지 않았어요</div>
+            
+            <!-- 객실 카드들 -->
+            <div class="room-card selected" onclick="selectRoom(this)">
+                <div class="room-header">
+                    <div class="room-name">포르자 더블룸 (금연)</div>
+                    <span class="check-icon">✓</span>
+                </div>
+                
+                <div class="cancellation-info">예약 무료 취소 가능 (한국시간, 25년 10월 7일 00:00까지)</div>
+                
+                <div class="room-features">
+                    <span class="feature-tag">더블베드 1개</span>
+                    <span class="feature-tag">성인 2명</span>
+                    <span class="feature-tag">객실 크기(㎡) - 17</span>
+                </div>
+                
+                <div class="room-features">
+                    <span class="feature-tag">TV</span>
+                    <span class="feature-tag">헤어드라이어</span>
+                    <span class="feature-tag">에어컨</span>
+                </div>
+                
+                <div class="room-price">
+                    <div>
+                        <span class="price">103,587원/박</span>
+                        <span class="tax-info">세금포함</span>
+                    </div>
+                    <button class="option-btn">객실 옵션 보기</button>
+                </div>
+            </div>
+            
+            <div class="room-card" onclick="selectRoom(this)">
+                <div class="room-header">
+                    <div class="room-name">컴포트 더블룸 (금연)</div>
+                </div>
+                
+                <div class="cancellation-info">예약 무료 취소 가능 (한국시간, 25년 10월 7일 00:00까지)</div>
+                
+                <div class="room-features">
+                    <span class="feature-tag">퀸베드 1개</span>
+                    <span class="feature-tag">성인 2명</span>
+                    <span class="feature-tag">객실 크기(㎡) - 18</span>
+                </div>
+                
+                <div class="room-features">
+                    <span class="feature-tag">TV</span>
+                    <span class="feature-tag">헤어드라이어</span>
+                    <span class="feature-tag">에어컨</span>
+                </div>
+                
+                <div class="room-price">
+                    <div>
+                        <span class="price">110,020원/박</span>
+                        <span class="tax-info">세금포함</span>
+                    </div>
+                    <button class="option-btn">객실 옵션 보기</button>
+                </div>
+            </div>
+            
+            <div class="room-card" onclick="selectRoom(this)">
+                <div class="room-header">
+                    <div class="room-name">더블룸 (금연)</div>
+                </div>
+                
+                <div class="cancellation-info">예약 무료 취소 가능 (한국시간, 25년 10월 7일 00:00까지)</div>
+                
+                <div class="room-features">
+                    <span class="feature-tag">퀸베드 1개</span>
+                    <span class="feature-tag">성인 2명</span>
+                    <span class="feature-tag">객실 크기(㎡) - 19</span>
+                </div>
+                
+                <div class="room-features">
+                    <span class="feature-tag">TV</span>
+                    <span class="feature-tag">헤어드라이어</span>
+                    <span class="feature-tag">에어컨</span>
+                </div>
+                
+                <div class="room-price">
+                    <div>
+                        <span class="price">116,536원/박</span>
+                        <span class="tax-info">세금포함</span>
+                    </div>
+                    <button class="option-btn">객실 옵션 보기</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 근처 숙소 섹션 -->
+        <div class="section">
+            <h3 class="section-title">근처 숙소 둘러보기</h3>
+            
+            <div class="nearby-hotels">
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <div class="hotel-icon-small">🏨</div>
+                    </div>
+                    <div class="hotel-name">호텔 포르자 삿포로 스테이션</div>
+                    <div class="hotel-rating">
+                        <span class="star">⭐</span>
+                        <span style="font-size: 12px; font-weight: bold;">4.5</span>
+                    </div>
+                    <div class="hotel-price">103,587원/박</div>
+                </div>
+                
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <div class="hotel-icon-small">🏨</div>
+                    </div>
+                    <div class="hotel-name">삿포로 호텔 바이 그랑벨</div>
+                    <div class="hotel-rating">
+                        <span class="star">⭐</span>
+                        <span style="font-size: 12px; font-weight: bold;">4.6</span>
+                    </div>
+                    <div class="hotel-price">153,858원/박</div>
+                </div>
+                
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <div class="hotel-icon-small">🏨</div>
+                    </div>
+                    <div class="hotel-name">호텔 레졸 트리니티 삿포로</div>
+                    <div class="hotel-rating">
+                        <span class="star">⭐</span>
+                        <span style="font-size: 12px; font-weight: bold;">4.5</span>
+                    </div>
+                    <div class="hotel-price">79,946원/박</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 하단 여백 -->
+        <div style="height: 100px;"></div>
+    </div>
+
+    <!-- 하단 바 -->
+    <div class="bottom-bar">
+        <div class="booking-info">
+            <div class="booking-date">10월 8일(수) - 10월 9일(목) · 1박·2명</div>
+            <div class="booking-price" id="selectedPrice">103,587원/박</div>
+        </div>
+        <button class="book-btn" onclick="bookRoom()">객실 선택</button>
+    </div>
+
+    <script>
+        let selectedRoomIndex = 0;
+        const roomPrices = ['103,587', '110,020', '116,536'];
+
+        function selectRoom(element) {
+            // 모든 객실 카드에서 선택 상태 제거
+            document.querySelectorAll('.room-card').forEach(card => {
+                card.classList.remove('selected');
+                const checkIcon = card.querySelector('.check-icon');
+                if (checkIcon) {
+                    checkIcon.remove();
+                }
+            });
+
+            // 선택된 객실 카드에 선택 상태 추가
+            element.classList.add('selected');
+            
+            // 체크 아이콘 추가
+            const roomHeader = element.querySelector('.room-header');
+            const checkIcon = document.createElement('span');
+            checkIcon.className = 'check-icon';
+            checkIcon.textContent = '✓';
+            roomHeader.appendChild(checkIcon);
+
+            // 선택된 객실 인덱스 업데이트
+            const roomCards = document.querySelectorAll('.room-card');
+            selectedRoomIndex = Array.from(roomCards).indexOf(element);
+
+            // 하단 바 가격 업데이트
+            document.getElementById('selectedPrice').textContent = roomPrices[selectedRoomIndex] + '원/박';
+        }
+
+        function bookRoom() {
+            const roomNames = ['포르자 더블룸', '컴포트 더블룸', '더블룸'];
+            alert(`${roomNames[selectedRoomIndex]}을(를) 선택하셨습니다.\n가격: ${roomPrices[selectedRoomIndex]}원/박`);
+        }
+
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.close();
+            }
+        }
+
+        // 페이지 로드 시 첫 번째 객실 선택 상태로 설정
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstRoom = document.querySelector('.room-card');
+            if (firstRoom) {
+                selectRoom(firstRoom);
+            }
+        });
+    </script>
+</body>
+</html>

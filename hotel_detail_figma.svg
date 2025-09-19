@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375" height="1200" viewBox="0 0 375 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .title { font-size: 18px; font-weight: bold; }
+      .subtitle { font-size: 16px; font-weight: bold; }
+      .body { font-size: 14px; }
+      .caption { font-size: 12px; }
+      .small { font-size: 10px; }
+    </style>
+  </defs>
+  
+  <!-- 배경 -->
+  <rect width="375" height="1200" fill="#f8f9fa"/>
+  
+  <!-- 상단 앱바 -->
+  <rect x="0" y="0" width="375" height="56" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  
+  <!-- 뒤로가기 버튼 -->
+  <rect x="16" y="8" width="40" height="40" fill="none" stroke="#d1d5db" stroke-width="1" rx="4"/>
+  <path d="M28 20L22 26L28 32" stroke="#374151" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- 검색창 -->
+  <rect x="72" y="8" width="231" height="40" fill="#f3f4f6" rx="20"/>
+  <circle cx="84" cy="28" r="8" fill="none" stroke="#9ca3af" stroke-width="2"/>
+  <path d="M90 34L94 38" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
+  <text x="100" y="32" class="text caption" fill="#9ca3af">일본 숙소 특가</text>
+  
+  <!-- 앱바 액션 버튼들 -->
+  <rect x="311" y="8" width="40" height="40" fill="none" stroke="#d1d5db" stroke-width="1" rx="4"/>
+  <path d="M325 20C325 18 327 16 329 16C331 16 333 18 333 20C333 22 331 24 329 24C327 24 325 22 325 20Z" fill="#374151"/>
+  <path d="M325 16L329 12L333 16" stroke="#374151" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <rect x="263" y="8" width="40" height="40" fill="none" stroke="#d1d5db" stroke-width="1" rx="4"/>
+  <path d="M275 20L279 16L283 20L279 24Z" fill="#374151"/>
+  
+  <rect x="215" y="8" width="40" height="40" fill="none" stroke="#d1d5db" stroke-width="1" rx="4"/>
+  <path d="M225 16C225 14 227 12 229 12C231 12 233 14 233 16C233 18 231 20 229 20C227 20 225 18 225 16Z" fill="#374151"/>
+  <path d="M225 20C225 18 227 16 229 16C231 16 233 18 233 20C233 22 231 24 229 24C227 24 225 22 225 20Z" fill="#374151"/>
+  <path d="M225 12L233 12L231 20L229 20Z" fill="#374151"/>
+  
+  <!-- 메인 히어로 섹션 -->
+  <rect x="0" y="56" width="375" height="300" fill="url(#heroGradient)"/>
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 호텔 아이콘 -->
+  <text x="187.5" y="200" class="text" font-size="80" text-anchor="middle" fill="white">🏨</text>
+  
+  <!-- 호텔 제목 -->
+  <text x="187.5" y="250" class="text title" text-anchor="middle" fill="white">Hotel Forza Sapporo Station</text>
+  
+  <!-- 이미지 인디케이터 -->
+  <circle cx="175" cy="340" r="4" fill="white"/>
+  <circle cx="187.5" cy="340" r="4" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="200" cy="340" r="4" fill="rgba(255,255,255,0.5)"/>
+  
+  <!-- 콘텐츠 영역 시작 -->
+  <g transform="translate(16, 372)">
+    
+    <!-- 호텔 정보 섹션 -->
+    <rect x="0" y="0" width="343" height="120" fill="white" rx="12"/>
+    
+    <!-- 호텔 등급 배지 -->
+    <rect x="16" y="16" width="60" height="24" fill="#f97316" rx="4"/>
+    <text x="46" y="32" class="text caption" text-anchor="middle" fill="white">3성급</text>
+    
+    <text x="84" y="32" class="text body" fill="#9ca3af">호텔</text>
+    
+    <!-- 평점 -->
+    <text x="16" y="56" class="text body" fill="#fbbf24">⭐</text>
+    <text x="32" y="56" class="text subtitle" fill="#374151">4.5</text>
+    <text x="60" y="56" class="text body" fill="#9ca3af">·후기 675개</text>
+    
+    <!-- 편의시설 -->
+    <rect x="16" y="72" width="60" height="24" fill="#f3f4f6" rx="12"/>
+    <text x="46" y="88" class="text caption" text-anchor="middle" fill="#374151">무료 WiFi</text>
+    
+    <rect x="84" y="72" width="60" height="24" fill="#f3f4f6" rx="12"/>
+    <text x="114" y="88" class="text caption" text-anchor="middle" fill="#374151">24시간 운영</text>
+    
+    <rect x="152" y="72" width="50" height="24" fill="#f3f4f6" rx="12"/>
+    <text x="177" y="88" class="text caption" text-anchor="middle" fill="#374151">자판기</text>
+    
+    <!-- 결제 혜택 섹션 -->
+    <rect x="0" y="136" width="343" height="280" fill="white" rx="12"/>
+    <text x="16" y="160" class="text title" fill="#374151">결제 혜택</text>
+    
+    <!-- KB국민카드 혜택 -->
+    <rect x="16" y="176" width="311" height="48" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" rx="8"/>
+    <rect x="16" y="176" width="4" height="48" fill="#3b82f6" rx="2"/>
+    <text x="32" y="192" class="text body" fill="#3b82f6" font-weight="bold">KB국민카드</text>
+    <text x="32" y="208" class="text caption" fill="#374151">KB국민카드 즉시 할인(최대 5만원)</text>
+    
+    <!-- 카카오페이머니 혜택 -->
+    <rect x="16" y="232" width="311" height="48" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" rx="8"/>
+    <rect x="16" y="232" width="4" height="48" fill="#3b82f6" rx="2"/>
+    <text x="32" y="248" class="text body" fill="#3b82f6" font-weight="bold">카카오페이머니</text>
+    <text x="32" y="264" class="text caption" fill="#374151">카카오페이머니 / 삼성카드 최대 4만원 즉시할인</text>
+    
+    <!-- 삼성카드 혜택 -->
+    <rect x="16" y="288" width="311" height="48" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" rx="8"/>
+    <rect x="16" y="288" width="4" height="48" fill="#3b82f6" rx="2"/>
+    <text x="32" y="304" class="text body" fill="#3b82f6" font-weight="bold">삼성카드</text>
+    <text x="32" y="320" class="text caption" fill="#374151">최대 6만원 결제일 할인</text>
+    
+    <!-- 현대카드 혜택 -->
+    <rect x="16" y="344" width="311" height="48" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" rx="8"/>
+    <rect x="16" y="344" width="4" height="48" fill="#3b82f6" rx="2"/>
+    <text x="32" y="360" class="text body" fill="#3b82f6" font-weight="bold">현대카드</text>
+    <text x="32" y="376" class="text caption" fill="#374151">M포인트 10% 사용가능 (최대 15,000 M포인트)</text>
+    
+    <!-- 무이자할부 혜택 -->
+    <rect x="16" y="400" width="311" height="48" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" rx="8"/>
+    <rect x="16" y="400" width="4" height="48" fill="#3b82f6" rx="2"/>
+    <text x="32" y="416" class="text body" fill="#3b82f6" font-weight="bold">무이자할부</text>
+    <text x="32" y="432" class="text caption" fill="#374151">최대 24개월 무이자 할부 가능</text>
+    
+    <!-- 숙소 위치 섹션 -->
+    <rect x="0" y="432" width="343" height="240" fill="white" rx="12"/>
+    <text x="16" y="456" class="text title" fill="#374151">숙소 위치</text>
+    
+    <!-- 지도 플레이스홀더 -->
+    <rect x="16" y="472" width="311" height="120" fill="#e5e7eb" rx="12"/>
+    <text x="171.5" y="520" class="text" font-size="48" text-anchor="middle" fill="#9ca3af">🗺️</text>
+    <text x="171.5" y="560" class="text body" text-anchor="middle" fill="#9ca3af">Google Maps</text>
+    
+    <!-- 주소 -->
+    <text x="16" y="612" class="text body" fill="#374151">1-1, Nishi2-Chome, Kita3-Jo, Chuo-Ku, Sapporo, Sapporo, Hokkaido, 일본, 060-0003</text>
+    
+    <!-- 위치 평점 -->
+    <text x="16" y="632" class="text body" fill="#fbbf24">⭐</text>
+    <text x="32" y="632" class="text body" fill="#9ca3af">4.9 · 후기 36개</text>
+    <text x="280" y="632" class="text body" fill="#3b82f6">주소복사</text>
+    
+    <!-- 객실 선택 섹션 -->
+    <rect x="0" y="688" width="343" height="400" fill="white" rx="12"/>
+    <text x="16" y="712" class="text title" fill="#374151">객실 선택</text>
+    
+    <!-- 날짜 정보 -->
+    <rect x="16" y="728" width="311" height="40" fill="#fef3c7" rx="8"/>
+    <text x="171.5" y="752" class="text body" text-anchor="middle" fill="#f59e0b" font-weight="bold">10/8(수) - 10/9(목) · 1박성인 2명</text>
+    
+    <!-- 긴급 메시지 -->
+    <text x="16" y="788" class="text body" fill="#dc2626" font-weight="bold">서두르세요! 객실이 얼마 남지 않았어요</text>
+    
+    <!-- 객실 카드 1 (선택됨) -->
+    <rect x="16" y="808" width="311" height="120" fill="white" stroke="#3b82f6" stroke-width="2" rx="12"/>
+    
+    <!-- 객실명과 체크 아이콘 -->
+    <text x="32" y="828" class="text subtitle" fill="#374151">포르자 더블룸 (금연)</text>
+    <text x="295" y="828" class="text body" fill="#3b82f6">✓</text>
+    
+    <!-- 취소 정보 -->
+    <text x="32" y="848" class="text caption" fill="#059669">예약 무료 취소 가능 (한국시간, 25년 10월 7일 00:00까지)</text>
+    
+    <!-- 객실 특징 -->
+    <rect x="32" y="860" width="60" height="20" fill="#f3f4f6" rx="8"/>
+    <text x="62" y="874" class="text caption" text-anchor="middle" fill="#374151">더블베드 1개</text>
+    
+    <rect x="100" y="860" width="50" height="20" fill="#f3f4f6" rx="8"/>
+    <text x="125" y="874" class="text caption" text-anchor="middle" fill="#374151">성인 2명</text>
+    
+    <rect x="158" y="860" width="80" height="20" fill="#f3f4f6" rx="8"/>
+    <text x="198" y="874" class="text caption" text-anchor="middle" fill="#374151">객실 크기(㎡) - 17</text>
+    
+    <!-- 가격 -->
+    <text x="32" y="908" class="text subtitle" fill="#dc2626">103,587원/박</text>
+    <text x="140" y="908" class="text caption" fill="#9ca3af">세금포함</text>
+    <text x="250" y="908" class="text body" fill="#3b82f6">객실 옵션 보기</text>
+    
+    <!-- 객실 카드 2 -->
+    <rect x="16" y="944" width="311" height="120" fill="white" stroke="#e5e7eb" stroke-width="1" rx="12"/>
+    
+    <text x="32" y="964" class="text subtitle" fill="#374151">컴포트 더블룸 (금연)</text>
+    <text x="32" y="984" class="text caption" fill="#059669">예약 무료 취소 가능 (한국시간, 25년 10월 7일 00:00까지)</text>
+    
+    <rect x="32" y="996" width="60" height="20" fill="#f3f4f6" rx="8"/>
+    <text x="62" y="1010" class="text caption" text-anchor="middle" fill="#374151">퀸베드 1개</text>
+    
+    <rect x="100" y="996" width="50" height="20" fill="#f3f4f6" rx="8"/>
+    <text x="125" y="1010" class="text caption" text-anchor="middle" fill="#374151">성인 2명</text>
+    
+    <rect x="158" y="996" width="80" height="20" fill="#f3f4f6" rx="8"/>
+    <text x="198" y="1010" class="text caption" text-anchor="middle" fill="#374151">객실 크기(㎡) - 18</text>
+    
+    <text x="32" y="1044" class="text subtitle" fill="#dc2626">110,020원/박</text>
+    <text x="140" y="1044" class="text caption" fill="#9ca3af">세금포함</text>
+    <text x="250" y="1044" class="text body" fill="#3b82f6">객실 옵션 보기</text>
+    
+    <!-- 객실 카드 3 -->
+    <rect x="16" y="1080" width="311" height="120" fill="white" stroke="#e5e7eb" stroke-width="1" rx="12"/>
+    
+    <text x="32" y="1100" class="text subtitle" fill="#374151">더블룸 (금연)</text>
+    <text x="32" y="1120" class="text caption" fill="#059669">예약 무료 취소 가능 (한국시간, 25년 10월 7일 00:00까지)</text>
+    
+    <rect x="32" y="1132" width="60" height="20" fill="#f3f4f6" rx="8"/>
+    <text x="62" y="1146" class="text caption" text-anchor="middle" fill="#374151">퀸베드 1개</text>
+    
+    <rect x="100" y="1132" width="50" height="20" fill="#f3f4f6" rx="8"/>
+    <text x="125" y="1146" class="text caption" text-anchor="middle" fill="#374151">성인 2명</text>
+    
+    <rect x="158" y="1132" width="80" height="20" fill="#f3f4f6" rx="8"/>
+    <text x="198" y="1146" class="text caption" text-anchor="middle" fill="#374151">객실 크기(㎡) - 19</text>
+    
+    <text x="32" y="1180" class="text subtitle" fill="#dc2626">116,536원/박</text>
+    <text x="140" y="1180" class="text caption" fill="#9ca3af">세금포함</text>
+    <text x="250" y="1180" class="text body" fill="#3b82f6">객실 옵션 보기</text>
+    
+  </g>
+  
+  <!-- 근처 숙소 섹션 -->
+  <g transform="translate(16, 1104)">
+    <rect x="0" y="0" width="343" height="200" fill="white" rx="12"/>
+    <text x="16" y="24" class="text title" fill="#374151">근처 숙소 둘러보기</text>
+    
+    <!-- 근처 호텔 카드들 -->
+    <rect x="16" y="40" width="200" height="140" fill="white" stroke="#e5e7eb" stroke-width="1" rx="12"/>
+    <rect x="24" y="48" width="184" height="60" fill="#e5e7eb" rx="8"/>
+    <text x="116" y="84" class="text" font-size="40" text-anchor="middle" fill="#9ca3af">🏨</text>
+    <text x="24" y="120" class="text body" fill="#374151" font-weight="bold">호텔 포르자 삿포로 스테이션</text>
+    <text x="24" y="140" class="text body" fill="#fbbf24">⭐</text>
+    <text x="40" y="140" class="text caption" fill="#374151" font-weight="bold">4.5</text>
+    <text x="24" y="160" class="text body" fill="#dc2626" font-weight="bold">103,587원/박</text>
+    
+    <rect x="228" y="40" width="200" height="140" fill="white" stroke="#e5e7eb" stroke-width="1" rx="12"/>
+    <rect x="236" y="48" width="184" height="60" fill="#e5e7eb" rx="8"/>
+    <text x="328" y="84" class="text" font-size="40" text-anchor="middle" fill="#9ca3af">🏨</text>
+    <text x="236" y="120" class="text body" fill="#374151" font-weight="bold">삿포로 호텔 바이 그랑벨</text>
+    <text x="236" y="140" class="text body" fill="#fbbf24">⭐</text>
+    <text x="252" y="140" class="text caption" fill="#374151" font-weight="bold">4.6</text>
+    <text x="236" y="160" class="text body" fill="#dc2626" font-weight="bold">153,858원/박</text>
+    
+  </g>
+  
+  <!-- 하단 바 -->
+  <rect x="0" y="1150" width="375" height="80" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  
+  <!-- 예약 정보 -->
+  <text x="16" y="1170" class="text caption" fill="#9ca3af">10월 8일(수) - 10월 9일(목) · 1박·2명</text>
+  <text x="16" y="1190" class="text subtitle" fill="#374151">103,587원/박</text>
+  
+  <!-- 예약 버튼 -->
+  <rect x="200" y="1166" width="159" height="48" fill="#3b82f6" rx="8"/>
+  <text x="279.5" y="1194" class="text subtitle" text-anchor="middle" fill="white">객실 선택</text>
+  
+</svg>
