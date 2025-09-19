@@ -12,7 +12,7 @@ class TravelBookingApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '유티스 여행 예약 앱',
+      title: '유티스 여행 예약 앱 test',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: 'NotoSans',
@@ -230,7 +230,7 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '띵동! 회원님을 위한 기프트 상품이 도착했어요.',
+                  '띵동!!! 회원님을 위한 기프트 상품이 도착했어요.',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
