@@ -539,3 +539,4 @@ class EventBenefit {
     required this.isActive,
   });
 }
+

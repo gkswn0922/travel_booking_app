@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375" height="500" viewBox="0 0 375 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect width="375" height="500" fill="#F5F5F5"/>
+  
+  <!-- 후기성글 섹션 -->
+  <g id="review-section">
+    <!-- 섹션 제목 -->
+    <g id="section-title">
+      <text x="16" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#000000">후기성글</text>
+    </g>
+    
+    <!-- 카드 그리드 -->
+    <g id="cards-grid">
+      <!-- 첫 번째 행 -->
+      <g id="first-row">
+        <!-- 카드 1: Trip.Best -->
+        <g id="card-1">
+          <rect x="16" y="50" width="160" height="200" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+          <!-- 이미지 영역 -->
+          <rect x="16" y="50" width="160" height="120" rx="12" fill="url(#gradient1)"/>
+          <!-- 하트 아이콘 -->
+          <circle cx="164" cy="66" r="12" fill="rgba(0,0,0,0.3)"/>
+          <text x="164" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF">♡</text>
+          <!-- 텍스트 영역 -->
+          <g id="card-1-text">
+            <text x="28" y="190" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">Trip.Best</text>
+            <text x="28" y="205" font-family="Arial, sans-serif" font-size="12" fill="#666666">베스트 호텔</text>
+            <text x="28" y="220" font-family="Arial, sans-serif" font-size="11" fill="#333333">서울 근교 온천 비밀 명소!</text>
+            <text x="28" y="235" font-family="Arial, sans-serif" font-size="11" fill="#333333">북한산 자락에 위치한 힐링...</text>
+            <text x="28" y="250" font-family="Arial, sans-serif" font-size="10" fill="#666666">zaizai666</text>
+            <text x="148" y="250" font-family="Arial, sans-serif" font-size="10" fill="#666666">2.4만</text>
+          </g>
+        </g>
+        
+        <!-- 카드 2: 현대 서울 백화점 -->
+        <g id="card-2">
+          <rect x="188" y="50" width="160" height="200" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+          <!-- 이미지 영역 -->
+          <rect x="188" y="50" width="160" height="120" rx="12" fill="url(#gradient2)"/>
+          <!-- 하트 아이콘 -->
+          <circle cx="336" cy="66" r="12" fill="rgba(0,0,0,0.3)"/>
+          <text x="336" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF">♡</text>
+          <!-- 텍스트 영역 -->
+          <g id="card-2-text">
+            <text x="200" y="190" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">현대 서울 백화점</text>
+            <text x="200" y="205" font-family="Arial, sans-serif" font-size="12" fill="#666666">쇼핑몰</text>
+            <text x="200" y="220" font-family="Arial, sans-serif" font-size="11" fill="#333333">2025년 여름, 현대 서울 백화점에서</text>
+            <text x="200" y="235" font-family="Arial, sans-serif" font-size="11" fill="#333333">꼭 방문해야 할...</text>
+            <text x="200" y="250" font-family="Arial, sans-serif" font-size="10" fill="#666666">cocoa12</text>
+            <text x="320" y="250" font-family="Arial, sans-serif" font-size="10" fill="#666666">5,832</text>
+          </g>
+        </g>
+      </g>
+      
+      <!-- 두 번째 행 -->
+      <g id="second-row">
+        <!-- 카드 3: 도서관 -->
+        <g id="card-3">
+          <rect x="16" y="270" width="160" height="200" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+          <!-- 이미지 영역 -->
+          <rect x="16" y="270" width="160" height="120" rx="12" fill="url(#gradient3)"/>
+          <!-- 하트 아이콘 -->
+          <circle cx="164" cy="286" r="12" fill="rgba(0,0,0,0.3)"/>
+          <text x="164" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF">♡</text>
+          <!-- 텍스트 영역 -->
+          <g id="card-3-text">
+            <text x="28" y="410" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">도서관</text>
+            <text x="28" y="425" font-family="Arial, sans-serif" font-size="12" fill="#666666">문화시설</text>
+            <text x="28" y="440" font-family="Arial, sans-serif" font-size="11" fill="#333333">책을 사랑하는 사람들의 꿈 같은</text>
+            <text x="28" y="455" font-family="Arial, sans-serif" font-size="11" fill="#333333">장소에 들어섰습니다.</text>
+            <text x="28" y="470" font-family="Arial, sans-serif" font-size="10" fill="#666666">booklover</text>
+            <text x="148" y="470" font-family="Arial, sans-serif" font-size="10" fill="#666666">1.2만</text>
+          </g>
+        </g>
+        
+        <!-- 카드 4: 웨스틴조선 서울 -->
+        <g id="card-4">
+          <rect x="188" y="270" width="160" height="200" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+          <!-- 이미지 영역 -->
+          <rect x="188" y="270" width="160" height="120" rx="12" fill="url(#gradient4)"/>
+          <!-- 하트 아이콘 -->
+          <circle cx="336" cy="286" r="12" fill="rgba(0,0,0,0.3)"/>
+          <text x="336" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF">♡</text>
+          <!-- 텍스트 영역 -->
+          <g id="card-4-text">
+            <text x="200" y="410" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">웨스틴조선 서울</text>
+            <text x="200" y="425" font-family="Arial, sans-serif" font-size="12" fill="#666666">호텔 뷔페</text>
+            <text x="200" y="440" font-family="Arial, sans-serif" font-size="11" fill="#333333">랍스터 무제한인 뷔페 끝판왕</text>
+            <text x="200" y="455" font-family="Arial, sans-serif" font-size="11" fill="#333333"></text>
+            <text x="200" y="470" font-family="Arial, sans-serif" font-size="10" fill="#666666">예블</text>
+            <text x="320" y="470" font-family="Arial, sans-serif" font-size="10" fill="#666666">3.5만</text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- 그라데이션 정의 -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F3E5F5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F5E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFF3E0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F1F8E9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F2F1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8E1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFEBEE;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
+
+

@@ -421,3 +421,4 @@ class EventNotice {
     required this.category,
   });
 }
+
